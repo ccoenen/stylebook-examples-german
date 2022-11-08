@@ -92,7 +92,7 @@
   {
     "kind": 1,
     "language": "markdown",
-    "value": "## Attributes for the flex items\n\n### `flex-grow`\n\nThe `flex-grow` attribute defines how much space an item is allowed to take up. The biggest value will get the most space. The default value is `0`."
+    "value": "## Attributes for the flex items\n\n### `flex-grow`\n\nThe `flex-grow` attribute defines how much space an item is allowed to take up. The biggest value will get the most space. If you set all items to `1`, they will distribute the space evenly. If you set one item to `2`, it will take twice as much space. The default value is `0`."
   },
   {
     "kind": 2,
@@ -102,7 +102,7 @@
   {
     "kind": 1,
     "language": "markdown",
-    "value": "### `flex-basis`\n\nThe `flex-basis` attribute sets the preferred size of an item "
+    "value": "### `flex-basis`\n\nThe `flex-basis` attribute sets the preferred size of an item before the remaining space is distributed. Besides length-values you can also use the `auto` keyword, that looks at the elements `width` and `height` attribute.\n\nBefore we can check out an example, we have to reset the `flex-grow` attributes."
   },
   {
     "kind": 2,
@@ -112,12 +112,7 @@
   {
     "kind": 1,
     "language": "markdown",
-    "value": "### `flex-shrink`\n\nThe `flex-shrink` attribute defines the opposite to the `flex-grow` attribute. The higher the value, the earlier the element will collapse.\n\nBefore we can check out an example, we have to reset the `flex-grow` attributes and set some fixed and relatives widths to the items."
-  },
-  {
-    "kind": 1,
-    "language": "markdown",
-    "value": "If we set the `flex-shrink` attribute for `item2` and `item3` now to different values, we can see that the elements collapse earlier, depending on their `flex-shrink` value.\n\nIf you like, you can play around with this example, change the values, and see what happens."
+    "value": "### `flex-shrink`\n\nThe `flex-shrink` attribute defines the opposite to the `flex-grow` attribute. The higher the value, the earlier the element will collapse.\n\nIf we set the `flex-shrink` attribute for `item2` and `item3` now to different values, we can see that the elements collapse earlier, depending on their `flex-shrink` value.\n\nIf you like, you can play around with this example, change the values, and see what happens."
   },
   {
     "kind": 2,
