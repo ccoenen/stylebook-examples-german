@@ -1,0 +1,32 @@
+[
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "# Kaskade\n\nWas ist eigentlich das \"cascading\" in Cascading Style Sheets? Nehmen wir mal das folgende HTML-Gerüst an:"
+  },
+  {
+    "kind": 2,
+    "language": "html",
+    "value": "<article>\n  <h1>Star Trek Ipsum</h1>\n  <p class=\"teaser\">\n    Space, the <strong>final</strong> frontier. These are the voyages of the Starship <em>Enterprise</em>.\n  </p>\n  <p>\n    Its <a href=\"https://intl.startrek.com/\">five-year mission</a>: to explore strange new worlds, to seek out new life and new civilizations,\n    to boldly go where no man has gone before. Many say exploration is part of our destiny, but\n    it's actually our duty to future generations and their quest to ensure the survival of the human species.\n  </p>\n</article>"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "Wenn wir einem übergeordneten Element eine Eigenschaft geben, dann vererbt sie sich in den meisten Fällen auch an alle untergeordneten Elemente. Wenn wir also `article` stylen, dann bekommen auch `h1` und `p` (und darin sogar `em` und `strong`) etwas davon ab. Alles, was in `article` steht, bekommt hier eine blaue Textfarbe."
+  },
+  {
+    "kind": 2,
+    "language": "css",
+    "value": "article {\n  padding: 1em;\n  background-color: rgb(180, 180, 255);\n  color: rgb(0, 0, 170);\n}"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "Eine Eigenschaft kaskadiert also zu den innen liegenden Elementen hinein. Wir dürfen das aber gerne in den inneren Elementen dennoch überschreiben:"
+  },
+  {
+    "kind": 2,
+    "language": "css",
+    "value": "strong {\n    color: white;\n    text-decoration: underline;\n}\n\nem {\n    font-size: 1.3em;\n    font-weight: bolder;\n}"
+  }
+]

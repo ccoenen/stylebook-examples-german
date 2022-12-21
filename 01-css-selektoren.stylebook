@@ -1,0 +1,87 @@
+[
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "# CSS Selektoren\n\nIn diesem Stylebook lernen Sie CSS-Selektoren kennen. Bitte experimentieren Sie mit allen Code-Blöcken. Sie können anschließend den \"Play\" Button neben dem Code verwenden, oder den \"Run all\" Button am oberen Rand des Fensters.\n\n## Element-Selektor\n\nDer einfachste Selektor in HTML ist der Element-Selector. Er wählt alle Elemente, die von einem bestimmten Tag-Typ sind, aus. Für die nächsten Beispiele haben wir ein stück HTML mit einer `h1`-Überschrift."
+  },
+  {
+    "kind": 2,
+    "language": "html",
+    "value": "<h1>This is a headline</h1>"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "Alle `h1` Überschriften können Sie nun mit dem Element-Selektor auswählen, dazu schreibt man nur den Tag-Namen vor die geschweiften Klammer `{`, in den geschweiften Klammern können Sie nun Eigenschaften verändern. Wir probieren es hier mit `color`, geben ihm einen Wert und schließen das mit dem Semikolon `;` ab. Der ganze Block hat am Ende eine schließende geschweifte Klammer `}`."
+  },
+  {
+    "kind": 2,
+    "language": "css",
+    "value": "h1 {\n  color: #ff00ff;\n}"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "(Drücken Sie den Play- Button, um das Beispiel auszuführen)"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "> Wie erwähnt, wird sich der _Element-Selektor_ auf alle Elemente des Typs im ganzen Dokument auswirken.\n\nSie können in den nächsten Beispielen ausprobieren, was mit `p` oder `input` anstelle von `h1` passieren würde. Sie können praktisch jedes HTML-Element stylen.\n\n## Class-Selektor\n\nDer warhscheinlich am meisten verwendete Selektor ist der \"class\"-Selektor. HTML-Elemente können Attribute haben, und eines der wichtigsten ist das `class=\"...\"`-Attribut. Hiermit können Sie einem Element mehr Informationen geben, worum es sich handelt. Wir fügen einen Absatz (`p` - Paragprah) zu unserem HTML hinzu, dieser hat auch ein Class-Attribut:"
+  },
+  {
+    "kind": 2,
+    "language": "html",
+    "value": "<p class=\"teaser-text\">This teaser should look different than the rest of the text.</p>\n<p>Now that this teaser is over, we continue with regular looking text for the rest of our article.</p>\n<p>This article has three paragraphs, this is amazing!</p>"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "Als nächstes erzeugen wir eine passende CSS-Regel: wir schreiben einen Punkt `.` direkt gefolgt vom Namen der Klasse. In unserem Beispiel also `.teaser-text`. Danach folgen die Eigenschaften, die wir ändern wollen wie auch im vorigen Beispiel erklärt."
+  },
+  {
+    "kind": 2,
+    "language": "css",
+    "value": ".teaser-text {\n  font-weight: bold;\n}"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "### Mehrere Klassen im gleichen Element?\n\nDas geht! Sie können einem Element mehrere Klassen geben, und so das Aussehen aus mehreren Klassen zusammen setzen!"
+  },
+  {
+    "kind": 2,
+    "language": "html",
+    "value": "<p class=\"meta-info aside\">Article was written very carefully by some author.</p>"
+  },
+  {
+    "kind": 2,
+    "language": "css",
+    "value": ".meta-info {\n    background-color: lightgray;\n    color: brown;\n}\n\n.aside {\n    padding: 0.6em;\n    text-align: right;\n}"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "## Id-Selektor\n\nDer letzte einfache Selektor ist der _ID-Selektor_. HTML-Elemente können eine ID haben, diese muss im gesamten Dokument eindeutig sein (im Gegensatz dazu können Klassen vielfach an verschiedenen Stellen verwendet werden). Daher haben IDs in CSS auch eher eine untergeordnete Rolle.\n\nWir fügen ein Element mit eindeutiger ID zu unserem HTML hinzu:"
+  },
+  {
+    "kind": 2,
+    "language": "html",
+    "value": "<input id=\"email\" placeholder=\"join our newsletter\"></input>\n<input type=\"submit\" value=\"subscribe\"></input>"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "In CSS verwenden Sie die Raute/Nummernsymbol (`#`, im Englischen \"hash\" oder \"pound\"-Symbol, siehe Hashtag) gefolgt vom ID-Namen. In unserem Beispiel also `#email`:"
+  },
+  {
+    "kind": 2,
+    "language": "css",
+    "value": "#email {\n  padding: 1.1em;\n  border: 2px solid #0000ff;\n  font-size: 1.1em;\n}"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "## Zusammenfassung\n\nEs gibt für den Anfang drei einfache CSS-Selektoren, die Sie verwenden können:\n\n1. Der _Element Selektor_ trägt kein Präfix (`p`)\n2. Der _Class Selektor_ benutzt den `.` vor dem Klassennamen (`.teaser`)\n3. Der _Id Selektor_ benutzt das `#` vor dem Id-Namen (`#email`)\n\nDie ersten beiden sind weitaus häufiger anzutreffen, als der letzte. Es gibt viele weitere Selektoren, auf die wir noch nicht sofort eingehen. Selektoren können außerdem kombiniert werden."
+  }
+]

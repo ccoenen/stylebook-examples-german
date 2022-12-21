@@ -1,3 +1,3 @@
-# Stylebook examples
+# Deutsche Stylebook Beispiele
 
-Here you can find example files for [Stylebooks](https://marketplace.visualstudio.com/items?itemName=garrit.stylebook) in Visual Studio Code.
+Dies ist überwiegend ein Fork und eine Übersetzung der [ursprünglich englischen Stylebook-Examples](https://github.com/pixelkind/stylebook-examples) von @pixelkind. Es handelt sich um `stylebook`-Dateien, die mit der [VSCode/Codium-Erweiterung "stylebook"](https://marketplace.visualstudio.com/items?itemName=garrit.stylebook) gelesen und bearbeitet werden können.

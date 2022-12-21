@@ -1,0 +1,162 @@
+[
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "# Attribute beeinflussen den Look von Elementen\n\nMit CSS kann man die Darstellung von Elementen beeinflussen. Darstellung meint hier meistens das Aussehen, kann sich aber auch auf akustische Eigenschaften oder Reihenfolgen beziehen.\n\nFür die ersten Beispiele nehmen wir das folgende `h1`-Element zur Hand und zeigen beispielhaft einige Attribute, die CSS anbietet:"
+  },
+  {
+    "kind": 2,
+    "language": "html",
+    "value": "<h1>Hallo CSS!</h1>"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "## Umrandung: `border`\n\nFangen wir mit etwas offensichtlichem an: Elemente können eine Umrandung (englisch: `border`) haben. Sie hat wiederum viele Attribute, die sie definieren:\n\n### `border-style`\n\n`border-style` kann durchgängige oder unterbrochene Linien erzeugen, dafür kann man `solid`, `dashed`, `dotted` und [noch ein paar weitere Werte](https://developer.mozilla.org/en-US/docs/Web/CSS/border-style) verwenden.\n\nVersuchen Sie verschiedene Werte im nachfolgenden Code-Schnipsel aus. Vergessen Sie nicht, \"play\" zu drücken."
+  },
+  {
+    "kind": 2,
+    "language": "css",
+    "value": "h1 {\n  border-style: solid;\n}"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "### `border-width`\n\nDiese Linie ist standardmäßig etwas dick. Vielleicht ist sie auch nicht dick genug. Jedenfalls wollen wir die Dicke beeinflussen. Das machen wir mit der `border-width`. Die kann Zahlen in verschiedenen Einheiten entgegen nehmen, häufig sind das Zahlen in `px` (Pixeln) oder `em` (eine Einheit relativ zur Schriftgröße). CSS hat sehr viele weitere mögliche Einheiten.\n\nSie können auch an jeder der vier Seiten verschiedene Werte setzen. Weitere Informationen finden sie in in der [MDN-Referenz zu `border-width`](https://developer.mozilla.org/en-US/docs/Web/CSS/border-width).\n\nProbieren sie verscheidene Werte aus!"
+  },
+  {
+    "kind": 2,
+    "language": "css",
+    "value": "h1 {\n  border-width: 0.5em;\n}"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "### `border-color`\n\nGraue Ränder. Toll. Aber versuchen wir es mal mit etwas Farbe! `border-color` ist unser Stichwort. Wie auch bei `border-width` gibt es viele möglichkeiten und auch hier kann man für jede Seite etwas getrenntes definieren, wenn man möchte.\n\nFarben kann man in CSS auf verschiedene Arten aufschreiben: \n- RGB-hex-codes (z.B. `#ff0000` für rot)\n- vordefinierte Farbnamen (z.B. `aqua` für türkis)\n- RGB in Zahlen (z.B. `rgb(0, 255, 0)` für grün)\n- RGB mit Alpha in Zahlen (z.B. `rgba(255, 255, 255, 0.5)` für halbtransparentes weiß)\n- [HSL](https://de.wikipedia.org/wiki/HSV-Farbraum#HSL) Schreibweise (z.B. `hsl(0, 100%, 50%)` für rot oder `hsla(0, 100%, 50%, 0.5)` für transparentes rot);\n\nZur [Definition von Farbwerten finden Sie hier noch viele weitere Informationen](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value)."
+  },
+  {
+    "kind": 2,
+    "language": "css",
+    "value": "h1 {\n  border-color: #ffaa00;\n}"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "### `border`\n\nDiese Eigenschaften stehen oft zusammen, und deswegen gibt es eine Kurzschreibweise. Man setzt hier `-width`, `-style` und `-color` quasi in einem. Sie können alle verfügbaren Schreibweisen nach Belieben mischen. Hier ein Beispiel:"
+  },
+  {
+    "kind": 2,
+    "language": "css",
+    "value": "h1 {\n  border: 4px dashed #00ff00;\n}"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "Weil wir für die nachfolgenden Beispiele keine Border haben möchten, setzten wir sie abschließend einmal auf `none`."
+  },
+  {
+    "kind": 2,
+    "language": "css",
+    "value": "h1 {\n  border-style: none;\n}"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "## Hintergründe: `background`\n\nDie Fläche, auf der ein element gezeichnet wird, kann einen Hintergrund haben. Der Standard ist zunächst einmal \"durchsichtig\", aber Sie können beispielsweise eine einfache Hintergrundfarbe verwenden.\n\n### `background-color`\n\nFür die Hintergrundfarbe sind alle bei `border-color` erwähnten Farb-Schreibweisen erlaubt. Experimentieren Sie gerne ein wenig demit herum!"
+  },
+  {
+    "kind": 2,
+    "language": "css",
+    "value": "h1 {\n  background-color: rgb(128, 0, 128);\n}"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "### `background-image`\n\nAnstelle von einfarbigen Hintergründen können wir auch Bilder verwenden. Hierzu benutzen wir eine Schreibweise, die ähnlich wie Funktionen in JavaScript aussieht: `url(...)`. In den klammern darf dabei ein relativer Pfad oder eine komplette URL stehen.\n\n[`background-image` hat viele weitere Möglichkeiten, die Sie hier nachlesen können](https://developer.mozilla.org/en-US/docs/Web/CSS/background-image)."
+  },
+  {
+    "kind": 2,
+    "language": "css",
+    "value": "h1 {\n  background-image: url(\"https://images.unsplash.com/photo-1458682625221-3a45f8a844c7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80\");\n}"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "Hintergründe können auch CSS-Farbverläufe verwenden. Das ist ein ganz eigenes Thema in das man viel Zeit stecken kann, daher an dieser Stelle nur ein [Artikel zu Farbverläufen in CSS](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Images/Using_CSS_gradients). Und es gibt dafür auch nette [Farbverlauf-Generatoren](https://www.colorzilla.com/gradient-editor/).\n\n### `background-size`\n\nBilder haben nicht immer die perfekte Größe, daher kann man sie in CSS anpassen. Möglich sind Pixelwerte, Prozentangaben oder die Schlüsselwörter `contain` und `cover`. Im Normalfall wird das Bild dann immer wieder wiederholt, auch das kann man per CSS beeinflussen (`background-repeat`)."
+  },
+  {
+    "kind": 2,
+    "language": "css",
+    "value": "h1 {\n  background-size: 100px 100px;\n}"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "### `background`\n\nwie auch bei den Umrandungen, gibt es auch bei den Hintergründen eine kurzschreibweise. Auch hierzu gibt es eine [umfangreiche Dokumentation](https://developer.mozilla.org/en-US/docs/Web/CSS/background)."
+  },
+  {
+    "kind": 2,
+    "language": "css",
+    "value": "h1 {\n  background: linear-gradient(red, yellow);\n}"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "Auch hier setzen wir abschließend wieder etwas \"neutrales\"."
+  },
+  {
+    "kind": 2,
+    "language": "css",
+    "value": "h1 {\n    background: transparent;\n}"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "## Schrift: `color`, `font-...` und `text-`\n\nInernetseiten haben ihre Wurzeln in Text-Dokumenten. Es sollte wenig verwundern, dass sehr viele CSS-Eigenschaften in irgendeiner Weise Text beeinflussen!\n\n### `color`\n\nGanz banal die Textfarbe, in den bereits bekannten Schreibweisen. Zum Beispiel:"
+  },
+  {
+    "kind": 2,
+    "language": "css",
+    "value": "h1 {\n    color: rgb(127, 255, 0);\n}"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "### `font-weight`\n\nVerschiedene Schriftenschnitte können sie mit `font-weight` (wie fett die Schrift ist) und `font-style` (Schrägstellung etc.) beeinflussen. Überschriften sind von den meisten Browsern von Haus aus etwas fetter gedruckt. Das überschreiben wir hiermit zu \"normaler\" Dicke:"
+  },
+  {
+    "kind": 2,
+    "language": "css",
+    "value": "h1 {\n    font-weight: normal;\n}"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "### `font-family`\n\nSchriftarten nennt man in CSS eine `font-family`. Bitte beachten Sie, dass diese ausgewählte Schrift auf dem Gerät auch vorhanden sein muss. Vergleichen Sie im Zweifelsfall die Darstellung auch auf anderen Geräten. Sie können weitere Schriften mit CSS zusammen ausliefern lassen, das ist nicht Teil dieses Dokuments. Man kann unter Font-Family mehrere Schriften komma-getrennt angeben, und es wird die erste verfügbare Schrift verwendet."
+  },
+  {
+    "kind": 2,
+    "language": "css",
+    "value": "h1 {\n    font-family: \"Comic Sans MS\", sans-serif;\n}"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "### `text-decoration`\n\nZusammen gesetzt aus `text-decoration-color`, `text-decoration-line` und `text-decoration-style`, kann man einige Möglichkeiten zusammensetzen. Experimentieren sie im folgenden Code-Feld mit `underline`, `underline dotted`, `green wavy`, `line-through` und [weiteren Möglichkeiten von text-decoration](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)."
+  },
+  {
+    "kind": 2,
+    "language": "css",
+    "value": "h1 {\n    text-decoration: line-through wavy red;\n}"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "## Zusammengesetztes Beispiel\n\nIm Weiteren setzen wir eine Handvoll Attribute, dies zeigt auch die normale Schreibweise, wenn man mehrere Attribute gleichzeitig setzt!"
+  },
+  {
+    "kind": 2,
+    "language": "css",
+    "value": "h1 {\n    border-left: 2px solid white;\n    background-color: rgb(0, 50, 0);\n    color: white;\n    font-weight: bold;\n    font-family: \"Consolas\", \"Courier New\", \"Courier\", monospace;\n    text-decoration: none;\n\n    /* ein paar weitere Attribute, die wir nicht erklärt haben */\n    text-shadow: 0 0 2px white, 0 0 7px lightgreen, 0 0 9px black;\n    padding: 0.5em;\n}"
+  }
+]

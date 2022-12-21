@@ -1,0 +1,27 @@
+[
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "# Das CSS-Box-Modell\n\nHTML-Elemente bilden eine \"Box\", diese besteht aus einem Außen-Abstand (`margin`), einer Umrandung (`border`), einem Innen-Abstand (`padding`) und dem Inhalt selbst. `width` und `height` beziehen sich dabei im Normalfall auf den **Inhalt**, und padding, border und margin kommen sozusagen oben drauf um die Gesamtgröße zu berechnen.\n\nnehmen wir mal dieses Code-Beispiel von zwei Absätzen in einem Div-Element:"
+  },
+  {
+    "kind": 2,
+    "language": "html",
+    "value": "<div>\n  <p>Hallo Welt</p>\n  <p>Absatz 2</p>\n</div>"
+  },
+  {
+    "kind": 2,
+    "language": "css",
+    "value": "div {\n  display: inline-block;\n  background-color: lightgray;\n}\n\np {\n  margin: 1em;\n  border: 3px solid black;\n  padding: 3em;\n  background-color: darkolivegreen;\n  color: white;\n}"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "Den Absatztexten haben wir Margin, Border und Padding gegeben. Die Größe richtet sich nach dem Inhalt in den Absatz-Texten.\n\nMan kann hier auch sehen, dass die beiden Außenabstände der beiden Absatztexte sich nicht addieren - sie halten _insgesamt_ 1em Abstand zu einander.\n\nIm nächsten Beispiel setzen wir noch explizit eine Breite und Höhe (alle zuvor gemachten Definitionen gelten aber weiterhin!)."
+  },
+  {
+    "kind": 2,
+    "language": "css",
+    "value": "p {\n    height: 5em;\n    width: 2em;\n}"
+  }
+]

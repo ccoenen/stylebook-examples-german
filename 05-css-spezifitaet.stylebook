@@ -1,0 +1,47 @@
+[
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "# Spezifität\n\nElemente erhalten Styling-Informationen aus allen möglichen Richtungen. Der Browser bringt einen Standard-Stil mit. Übergeordnete Elemente vererben ihre Styles teilweise an die Kind-Elemente. Elemente erhalten eigene Styles, die sich teilweise widersprechen können.\n\nWas gewinnt? Was gilt am Ende?\n\nDas regelt in CSS die \"Spezifität\" (Englisch: \"specificity\"). Kurz zusammengefasst: die am genausten passende Styling-Anweisung gewinnt.\n\nHier etwas Beispiel-Code:"
+  },
+  {
+    "kind": 2,
+    "language": "html",
+    "value": "<article>\n  <h1>Star Trek Ipsum</h1>\n  <p class=\"teaser\">\n    Space, the <strong>final</strong> frontier. These are the voyages of the Starship <em>Enterprise</em>.\n  </p>\n  <p>\n    Its <a href=\"https://intl.startrek.com/\">five-year mission</a>: to explore strange new worlds, to seek out new life and new civilizations,\n    to boldly go where no man has gone before. Many say exploration is part of our destiny, but\n    it's actually our duty to future generations and their quest to ensure the survival of the human species.\n  </p>\n</article>"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "Nehmen wir an, wir stylen den `article`, jedes `p` tag, aber auch die Klasse `.teaser`. Die Klasse wird als \"spezifischer\" angesehen und deswegen gewinnt alles, was aus der Klasse kommt. Beachten Sie insbesondere die `color`, die in _beiden_ Definitionen vorkommt, aber auch dass sowohl `font-weight` (aus Teaser) als auch `font-size` (aus P) alle angewandt werden.\n\nFür die Überschrift gibt es keine Definition, sie erbt die Farbe also aus `article`."
+  },
+  {
+    "kind": 2,
+    "language": "css",
+    "value": "article {\n  background-color: rgb(20, 20, 20);\n  padding: 1em;\n  color: yellow;\n}\n\np {\n  font-size: 18px;\n  color: red;\n}\n\n.teaser {\n  font-weight: bold;\n  color: green;\n}"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "Der Link (`a`-tag) erhält im Moment gar kein besonderes Styling und hat noch die Standard-Farbe aus dem Browser. Sobald Sie mit der Maus über den Link fahren, gilt das zusätzliche Styling der `:hover`-Pseudoklasse. Es gibt noch einige weitere Pseudoklassen, falls Sie sich für das Thema interessieren. Auch hier gilt: der zweite Selektor ist der spezifischere (er hat ja _zusätzlich_ die Pseudoklasse!) und damit gewinnen die Eigenschaften, die dort drin stehen."
+  },
+  {
+    "kind": 2,
+    "language": "css",
+    "value": "a {\n    color: lightcoral;\n    text-decoration: underline;\n}\n\na:hover {\n    color: red;\n    text-decoration: underline wavy red;\n}"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "In CSS gibt es auch zusammen gesetzte Selektoren. Auch hier gilt \"die spezifischste Information gewinnt\"."
+  },
+  {
+    "kind": 2,
+    "language": "css",
+    "value": "p {\n    color: red;\n}\n\narticle p { /* das ist ein \"p\" in einem \"article\" */\n    color: yellow;\n}\n\narticle p.teaser { /* ein \"p\" MIT .teaser-Klasse, das in einem \"article\" steht. */\n\n    color: green;\n}\n\narticle p:hover { /* wenn ich mit der Maus über einem \"p\" in einem \"article\" bin */\n    color: blue;\n}\n\n"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "Nun ist kein einziger Absatz rot, denn die gelbe Styling-Information gewinnt immer - sie ist einfach in einem genaueren Block drin.\n\nDer Teaser ist weiterhin grün, denn die Klasse schlägt die anderen Styling-Informationen - aber nur, bis wir mit der Maus über den Absätzen hovern. Hover gewinnt hier aber tatsächlich fast schon zufällg: es steht später im CSS, und wenn wir Dinge überschreiben gewinnt das _letzte_ was wir schreiben. Das ist hier `...:hover`, was ansonsten gleichauf mit `....teaser` wäre.\n\n## Formales Ausrechnen der Spezifität\n\nStellen sie sich vor, es gäbe drei Spalten, in denen eintragen, wie oft eine bestimmte Art von Selektor vorkommt. Wir nehmen einfach die obigen Beispiele!\n\n|Selektor|Id-Selektoren|Klassen-Selektoren|Element-Selektoren|\n|--------|-------------|------------------|------------------|\n|`p`|0|0|1|\n|`article p`|0|0|2|\n|`article p.teaser`|0|1|2|\n|`article p:hover`|0|1|2|\n|`#bernd`|1|0|0|\n\nDen höchsten Wert hat hier `#bernd`, fast so, als würde man das als Zahl lesen. Oder als würde man die Tabelle nach den Spalten sortieren. Man sieht auch, warum `article p` gegen `p` gewinnt. Auch hier sieht man, wie `article p.teaser` und `article p:hover` eigentlich gleichwertig spezifisch sind.\n"
+  }
+]
